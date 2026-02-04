@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.sidebar button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* BUTTONS */
+.main-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #00f2fe;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  opacity: 0.85;
+}
+
+.danger {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* RESULT */
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* LIST */
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+li {
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+/* =========================
+   STUDENT LIST
+========================= */
+#history {
+  list-style: none;
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+#history li {
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  font-size: 15px;
+  color: #fff;
+  transition: transform 0.2s, background 0.2s;
+}
+
+/* Hover effect for student row */
+#history li:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Student name & marks span */
+#history li span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+.delete-btn {
+  background: #764ba2;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #e60000;
+  transform: scale(1.1);
+}
+
+/* =========================
+   SCROLLBAR STYLE
+========================= */
+#history::-webkit-scrollbar {
+  width: 6px;
+}
+
+#history::-webkit-scrollbar-thumb {
+  background: #00f2fe;
+  border-radius: 10px;
+}
+
+#history::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 500px) {
+  #history li {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    margin-top: 6px;
+    margin-left: 0;
+  }
+}
+
+/* Clear History Button */
+#clearHistoryBtn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+#clearHistoryBtn:hover {
+
+  background: #e60000;
+  transform: scale(1.05);
+}
+
+/* Notification Toast */
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00cc66;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s, bottom 0.5s;
+  z-index: 1000;
+}

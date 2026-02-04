@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rank System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h2>🎓 RankApp</h2>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('add')">Add Student</button>
+  <button onclick="showPage('list')">Student List</button>
+  <button onclick="showPage('about')">About</button>
+  <button onclick="showPage('contact')">Contact</button>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <h1>Class Rank Calculator</h1>
+    <p>Welcome Rank Calculator</p>
+  </section>
+
+  <!-- ADD student -->
+  <section id="add" class="page">
+    <h1>Add Student</h1>
+
+    <input type="text" id="studentName"
+      placeholder="Student Full Name"
+      oninput="allowLettersOnly(this)">
+
+    <input type="number" id="marks"
+      placeholder="Marks (0 - 100)">
+
+    <button class="main-btn" onclick="calculateRank()">Add Student</button>
+  
+
+    <p id="result"></p>
+  </section>
+
+  <!-- LIST -->
+  <section id="list" class="page">
+    <h1>Student Ranking</h1>
+    <ul id="history"></ul>
+     <div class="history-controls">
+  <button id="clearHistoryBtn" onclick="clearHistory()">🗑 Clear All Students</button>
+</div>
+
+<ul id="history"></ul>
+  </section>
+
+  <!-- ABOUT -->
+<section id="about" class="page">
+  <h1>About RankApp</h1>
+
+  <p>
+    RankApp waa nidaam casri ah oo loogu talagalay in lagu
+    fududeeyo habka lagu qiimeeyo waxqabadka ardayda.
+    App-kan wuxuu isku daraa xawaare, saxnaan iyo
+    naqshad qurux badan si uu u siiyo macallimiinta
+    iyo maamulayaasha waxbarashada xal hal-meel ah.
+  </p>
+
+  <p>
+    Adigoo adeegsanaya RankApp, waxaad si sahlan u geli
+    kartaa magacyada ardayda iyo dhibcahooda (marks),
+    halkaas oo nidaamku si toos ah u xisaabinayo
+    darajada (grade) iyo booska ay kaga jiraan fasalka (rank).
+    Tani waxay meesha ka saareysaa qaladaadka gacanta
+    lagu sameeyo waxayna keydisaa waqti badan.
+  </p>
+
+  <p>
+    RankApp wuxuu adeegsadaa tiknoolajiyada casriga ah
+    sida HTML, CSS iyo JavaScript, isagoo sidoo kale
+    isticmaalaya Local Storage si xogta loo keydiyo
+    xitaa marka bogga la xiro. Taas macnaheedu waa
+    in xogtaadu ammaan tahay oo mar walba diyaar kuu ah.
+  </p>
+
+  <p>
+    Hadafka RankApp waa in uu noqdo aalad sahlan,
+    degdeg ah isla markaana la isku halleyn karo,
+    taas oo ka caawinaysa hay’adaha waxbarashada
+    inay si hufan u maareeyaan xogta ardayda
+    uguna gaaraan go’aano sax ah.
+  </p>
+
+  <p style="margin-top:15px; font-weight:bold;">
+    
+  </p>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="page">
+    <h1>Contact</h1>
+    <p>Email: baabakhan9@gmail.com</p>
+    <p>Phone: +252 617220108 / +252 614091952 </p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
